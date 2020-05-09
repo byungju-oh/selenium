@@ -4,6 +4,7 @@ import os
 import time
 
 search='하체비만'
+name='하체비만'
 url='https://www.google.co.in/search?q='+search+'&tbm=isch'
 구글경로='C:/Users/qkd/python/chromedriver_win32/chromedriver.exe'
 저장위치='E:/데이터사진/하체비만/'
@@ -22,7 +23,7 @@ for i in range(200):
         time.sleep(0.5)
 
         ui=img.get_attribute('src')
-        filename=os.path.join(저장위치,search+str(i)+ '.jpg')
+        filename=os.path.join(저장위치,name+str(i)+ '.jpg')
         t=urllib.request.urlopen(ui).read()
         with open(filename,"wb") as f:
             f.write(t)
